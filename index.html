@@ -8,56 +8,89 @@
 </head>
 <body>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Staatliches&display=swap');
 
-        body {
-            background-color: #0C0404;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+body {
+  background: #1f1f1f;
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fugaz One";
+}
 
-        main {
-            position: relative;
-        }
+.container {
+  width: 400px;
+  height: 200px;
+  position: relative;
+  transform: scale(0.7);
+}
 
-        .circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: white;
-        }
+.xfile {
+  width: 350px;
+  height: 200px;
+  background: whitesmoke;
+  clip-path: polygon(0 0, 43% 0, 48% 10%, 100% 10%, 100% 100%, 0 100%);
+  position: absolute;
+  display: grid;
+  place-content: center;
+}
 
-        .triangle {
-            width: 0;
-            height: 0;
-            border-bottom: 60px solid black;
-            border-left: 20px solid transparent;
-            border-right: 100px solid transparent;
-            animation: fleet 5s linear infinite;
-            position: absolute;
-            top: 20px;
-        }
+.container div:nth-child(2) {
+  top: -5px;
+  left: 5px;
+  background: #1f1f;
+  z-index: -1;
+  animation: files 2s infinite;
+  transform-origin: bottom right;
+}
 
-        @keyframes fleet {
-            0% {
-                transform: translateX(-100%);
-            }
+.container div:nth-child(3) {
+  top: -10px;
+  left: 10px;
+  background: limegreen;
+  z-index: -2;
+  
+}
 
-            100% {
-                transform: translateX(100%);
-            }
-        }
+.container div:nth-child(4) {
+  top: -15px;
+  left: 15px;
+  background: green;
+  z-index: -3;
+}
 
+.container div:nth-child(5) {
+  top: -20px;
+  left: 20px;
+  background: whitesmoke;
+  z-index: -4;
+}
+
+@keyframes files {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+h3 {
+  color: black;
+}
     </style>
-    <main>
-        <div class="circle"></div>
-        <div class="triangle"></div>
-    </main>
+    <div class="container">
+  <div class="xfile">
+    <h3>PROJECTS</h3>
+    
+  </div>
+  <div class="xfile"></div>
+  <div class="xfile"></div>
+  <div class="xfile"></div>
+  <div class="xfile"></div>
+</div>
 </body>
 </html>
